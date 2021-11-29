@@ -3,13 +3,13 @@ from .models import *
 
 # Register your models here. 
 class AlumnosAdmin(admin.ModelAdmin):
-    fields = ('nombre',)
+    fields = ('nombre', 'apellido',)
 
 class CursosAdmin(admin.ModelAdmin):
     fields = ('nombre',)
 
 class AsignacionAdmin(admin.ModelAdmin):
-    fields = ('nombre',)
+    fields = ('alumnos', 'cursos', 'fecha_asignacion',)
 
 admin.site.register(Alumnos, AlumnosAdmin)
 admin.site.register(Cursos, CursosAdmin)

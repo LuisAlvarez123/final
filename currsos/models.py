@@ -4,6 +4,7 @@ from django.db import models
 class Alumnos(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
+    
 
     def __str__(self):
         return self.nombre
@@ -19,3 +20,6 @@ class Asignacion(models.Model):
     alumnos =  models.ForeignKey(Alumnos, on_delete=models.CASCADE)
     cursos = models.ForeignKey(Cursos, on_delete=models.CASCADE)
     fecha_asignacion = models.DateField()
+
+    def __str__(self):
+        return self.alumnos, self.cursos
