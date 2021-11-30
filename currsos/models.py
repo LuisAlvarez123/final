@@ -22,4 +22,4 @@ class Asignacion(models.Model):
     fecha_asignacion = models.DateField()
 
     def __str__(self):
-        return self.alumnos, self.cursos
+        return '%s %s'%(self.alumnos, self.cursos)
